@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <input type="checkbox" id="menu-toggle">
+    <div class="sidebar">
+        <div class="side-header">
+            <h3><span>Santander bank</span></h3>
+        </div>
+        
+        <div class="side-content">
+            <div class="profile">
+                <div class="profile-img bg-img" style="background-image: url(img/photo_2024-07-22_12-33-55.jpg)"></div>
+                <h4>Tyler valenzia</h4>
+                <small>Account Holder</small>
+            </div>
+
+            <div class="side-menu">
+                <ul>
+                    <li>
+                       <a href="main.html">
+                            <span class="las la-home"></span>
+                            <small>Dashboard</small>
+                        </a>
+                    </li>
+                    <li>
+                       <a href="profile.html">
+                            <span class="las la-user-alt"></span>
+                            <small>Profile</small>
+                        </a>
+                    </li>
+                    <li>
+                       <a href="account.html" class="active">
+                            <span class="las la-wallet"></span>
+                            <small>Accounts</small>
+                        </a>
+                    </li>
+                    <li>
+                       <a href=" ">
+                            <span class="las la-credit-card"></span>
+                            <small>Cards</small>
+                        </a>
+                    </li>
+                    <li>
+                       <a href=" ">
+                            <span class="las la-money-bill"></span>
+                            <small>Transactions</small>
+                        </a>
+                    </li>
+                    <li>
+                       <a href=" ">
+                            <span class="las la-cogs"></span>
+                            <small>Settings</small>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <header>
+            <div class="header-content">
+                <label for="menu-toggle">
+                    <span class="las la-bars"></span>
+                </label>
+                
+                <div class="header-menu">
+                    <label for="">
+                        <span class="las la-search"></span>
+                    </label>
+                    
+                    <div class="notify-icon">
+                        <span class="las la-envelope"></span>
+                        <span class="notify">4</span>
+                    </div>
+                    
+                    <div class="notify-icon">
+                        <span class="las la-bell"></span>
+                        <span class="notify">3</span>
+                    </div>
+                    
+                    <div class="user">
+                        <div class="bg-img" style="background-image: url(img/photo_2024-07-22_12-33-55.jpg)"></div>
+                        
+                        <button id="logout-button" class="logout-button"><span class="las la-power-off"></span>Logout</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <main>
+            <div class="page-header">
+                <h1>Accounts</h1>
+                <small>Home / Accounts</small>
+            </div>
+            
+            <div class="page-content">
+                <div class="account-management">
+                    <h2>Manage Your Accounts</h2>
+                    <div class="account-actions">
+                        <button id="add-account" class="btn">Add New Account</button>
+                        <button id="view-accounts" class="btn">View All Accounts</button>
+                    </div>
+                    
+                    <h2>Account Overview</h2>
+                    <div class="account-list">
+                        <div class="account-card">
+                            <h3>Checking Account</h3>
+                            <p>Account Number: ****8613</p>
+                            <p>Balance: $30,200.23</p>
+                            <p>Account Type: Checking</p>
+                            <p>Opened On: January 15, 2018</p>
+                            <a href="#" class="btn">View Details</a>
+                        </div>
+                        
+                        <div class="account-card">
+                            <h3>Savings Account</h3>
+                            <p>Account Number: ****3478</p>
+                            <p>Balance: $60,000.00</p>
+                            <p>Account Type: Savings</p>
+                            <p>Opened On: June 10, 2018</p>
+                            <a href="#" class="btn">View Details</a>
+                        </div>
+                        
+                        <div class="account-card">
+                            <h3>Investment Account</h3>
+                            <p>Account Number: ****9012</p>
+                            <p>Balance: $102,000.00</p>
+                            <p>Account Type: Investment</p>
+                            <p>Opened On: March 20, 2022</p>
+                            <a href="#" class="btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+document.getElementById('logout-button').addEventListener('click', function() {
+    localStorage.removeItem('userToken');
+    sessionStorage.removeItem('userToken');
+    document.cookie = "userToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    window.location.href = './index.html';
+});
+    </script>
+</body>
+</html>
